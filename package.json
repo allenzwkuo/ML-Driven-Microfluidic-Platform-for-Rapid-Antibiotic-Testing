@@ -1,0 +1,49 @@
+{
+  "name": "picodetect",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "electron": "electron main.js",
+    "start": "concurrently \"npm run dev --prefix frontend\" \"npm run electron\"",
+    "package": "electron-builder"
+  },
+  "dependencies": {
+    "axios": "^1.8.1",
+    "flask-cors": "^0.0.1"
+  },
+  "devDependencies": {
+    "@electron/packager": "^18.3.6",
+    "concurrently": "^7.0.0",
+    "electron": "^35.0.1",
+    "electron-builder": "^23.0.3"
+  },
+  "build": {
+    "appId": "picodetect",
+    "productName": "Picodetect",
+    "files": [
+      "frontend/dist/**/*",
+      "backend/**/*",
+      "start_flask.py",
+      "venv/**/*",
+      "main.js",
+      "package.json",
+      "index.html"
+    ],
+    "directories": {
+      "output": "dist_electron"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "frontend/src/images/picopals_icon_app.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "frontend/src/images/picopals_icon_app.png"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "frontend/src/images/picopals_icon_app.png"
+    }
+  }
+}
