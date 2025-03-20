@@ -1,3 +1,6 @@
+# ML-Driven Microfluidic Platform for Rapid Antibiotic Testing
+This project integrates a two-tiered machine learning pipeline with a microfluidic platform for high-throughput bacterial antibiotic resistance testing. The first tier uses YOLO for object detection, while the second tier applies U-Net for image segmentation. A full-stack web application built with ReactJS and Flask enables real-time visualization and analysis of model outputs, streamlining antimicrobial susceptibility testing and accelerating decision-making in medical diagnostics.
+
 Make sure Python is installed, to install Python run this in terminal (installs brew then python 3.11):
 
 ```bash
